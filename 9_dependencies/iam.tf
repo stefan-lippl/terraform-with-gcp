@@ -1,0 +1,5 @@
+resource "google_project_iam_member" "cloud_functions_admin" {
+  project = local.project_id
+  role    = "roles/cloudfunctions.admin"
+  member  = "serviceAccount:${google_service_account.sa-slippl-dev.email}"
+}
